@@ -3,6 +3,7 @@
   padding: 0%;
 }
 
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -15,6 +16,8 @@
 .links {
   display: flex;
 }
+
+
 li {
   list-style: none;
   margin-left: 70px;
@@ -54,6 +57,7 @@ li {
   .logo {
     font-size: 25px;
     top: 16px;
+    left: 20px;
     transition: 0.2s ease-in-out;
   }
   .links {
@@ -105,6 +109,7 @@ li {
   .logo {
     font-size: 15px;
     top: 16px;
+    left: 10px;
     transition: 0.2s ease-in-out;
   }
 

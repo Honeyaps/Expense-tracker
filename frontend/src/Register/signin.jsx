@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./sign.css"; // Import CSS file for styling
+import "./sign.css"; 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -57,7 +57,7 @@ const SigninForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="enter your email address"
+            placeholder="johnandrew@gmail.com"
             value={formData.email}
             onChange={handleChange}
           />

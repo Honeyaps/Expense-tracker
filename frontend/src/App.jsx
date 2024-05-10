@@ -5,8 +5,11 @@ import Visualize from "./pages/Visualize";
 import { RecoilRoot } from "recoil";
 import Navbar from "./component/nav";
 import Landing from "./modal/Landing";
-import SignupForm from "./pages/signup";
-import SigninForm from "./pages/signin";
+import SigninForm from "./Register/signin";
+import SignupForm from "./Register/signup";
+import Email from "./Register/Forgot Pass/email";
+import Otp from "./Register/Forgot Pass/otp";
+import Reset from "./Register/Forgot Pass/reset";
 
 export default function App() {
   return (
@@ -21,6 +24,10 @@ export default function App() {
             <Route path="/visualize" element={<Visualize />}></Route>
             <Route path="/signup" element={<SignupForm />}></Route>
             <Route path="/signin" element={<SigninForm />}></Route>
+            <Route path="/email" element={<Email />}></Route>
+            <Route path="/otp" element={<Otp />}></Route>
+            <Route path="/reset" element={<Reset />}></Route>
+
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
