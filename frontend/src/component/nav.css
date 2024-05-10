@@ -1,26 +1,126 @@
 * {
-    margin: 0%;
-    padding: 0%;}
+  margin: 0%;
+  padding: 0%;
+}
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: aquamarine;
-  height: 50px;
-  padding:20px 10px ;
-
+  background-color: #e5e5e5;
+  color: rgb(0, 0, 0);
+  height: 20px;
+  padding: 20px 10px;
 }
 
-
-
-ul {
+.links {
   display: flex;
 }
 li {
   list-style: none;
   margin-left: 70px;
+  cursor: pointer;
 }
 .logout_btn {
-  border-radius: 5px;
-  /* display: flex; */
+  padding: 8px 14px;
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+  top: 13px;
+  left: 30px;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.avtar {
+  position: absolute;
+  right: 150px;
+  border: none;
+  font-size: larger;
+}
+
+.mobile_navbar,
+.menu_btn {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+    font-size: 25px;
+    top: 16px;
+    transition: 0.2s ease-in-out;
+  }
+  .links {
+    display: none;
+  }
+
+  .logout_btn {
+    display: none;
+  }
+
+  .logout_btn {
+    padding: 5px 8px;
+    right: 40px;
+    top: 15px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .mobile_navbar {
+    display: inline;
+    position: fixed;
+    right: 0px;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    background-color: #e5e5e5;
+    transition: 0.1s ease-in;
+  }
+
+  .mobile_links li {
+    margin: 20px 30px;
+
+  }
+
+  .menu_btn {
+    display: inline;
+    border: none;
+    font-size: 32px;
+    background-color: transparent;
+    margin-top: -6px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    height: 7px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .logo {
+    font-size: 15px;
+    top: 16px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .logout_btn {
+    padding: 2px 5px;
+    right: 20px;
+    border-radius: 3px;
+    top: 16px;
+    font-size: 10px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .menu_btn {
+    
+    font-size: 25px;
+    margin-top: -6px;
+    transition: 0.2s ease-in-out;
+  }
 }

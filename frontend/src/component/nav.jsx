@@ -1,32 +1,53 @@
-import { Link } from "react-router-dom";
-import "./nav.css"
+import "./nav.css";
 import { useRecoilState } from "recoil";
 import { pageState } from "../../state";
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+import { useState } from "react";
+import { BiMenu } from "react-icons/bi";
 
 export default function Navbar() {
-    const [page,setPage] = useRecoilState(pageState)
-    return(
-        <>
-        <div className="navbar">
-            <div className="logo">
-                <h1>MoneyFy</h1>
-            </div>
-            <div >
-                <ul>
-                    <li >Avtar</li>
-                    <li onClick={()=>setPage("home")}>Home
-                        
-                        </li>
-                    <li onClick={()=>setPage("add")}>Billing</li>
-                    <li onClick={()=>setPage("visualize")}>Thrive</li>
-                </ul>
-            </div>
-            <div className="logout_btn">
-                <button>
-                    Log out
-                </button>
-            </div>
+  const [page, setPage] = useRecoilState(pageState);
+  const [showMobileLinks, setShowMobileLinks] = useState(false);
+
+  const handleLinkClick = () => {
+    // Hide mobile links when a link is clicked
+    setShowMobileLinks(false);
+  };
+
+  return (
+    <>
+      <div className="navbar">
+        <div>
+          <h1 className="logo">
+            MONEYFY <FaMoneyBillTrendUp />
+          </h1>
         </div>
-        </>
-    );
+        <div>
+          <ul className="links">
+            <li onClick={() => { setPage("home"); handleLinkClick(); }}>Home</li>
+            <li onClick={() => { setPage("add"); handleLinkClick(); }}>Add</li>
+            <li onClick={() => { setPage("visualize"); handleLinkClick(); }}>Thrive</li>
+          </ul>
+        </div>
+        <div>
+          <button className="avtar">Avtar</button>
+          <button className="logout_btn">Log out</button>
+          <button className="menu_btn" onClick={() => setShowMobileLinks(!showMobileLinks)}>
+            <BiMenu />
+          </button>
+        </div>
+      </div>
+
+      {showMobileLinks && (
+        <div className="mobile_navbar">
+          <ul className="mobile_links">
+            <li onClick={() => { setPage("home"); handleLinkClick(); }}>Home</li>
+            <li onClick={() => { setPage("add"); handleLinkClick(); }}>Add</li>
+            <li onClick={() => { setPage("visualize"); handleLinkClick(); }}>Thrive</li>
+            <li>Log out</li>
+          </ul>
+        </div>
+      )}
+    </>
+  );
 }

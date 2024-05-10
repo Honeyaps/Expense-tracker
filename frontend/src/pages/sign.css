@@ -1,0 +1,102 @@
+
+
+.form-group {
+  margin-bottom: 20px;
+  font-size: small;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.form_btn {
+  background-color: rgb(255, 145, 0);
+  color: white;
+  width: 96%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form_btn:hover {
+  background-color: rgb(255, 157, 30);
+}
+
+.lower_txt {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.frgt_pass {
+  margin-left: 265px;
+}
+
+.signin_link {
+  color: rgb(255, 145, 0);
+  text-decoration: none;
+}
+
+.signup-form-container {
+  max-width: 400px;
+  margin: 3% auto;
+  padding: 10px 20px 10px 33px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.signup-form-container h2 {
+  text-align: center;
+}
+
+.signin-form-container {
+  max-width: 400px;
+  margin: 10% auto;
+  padding: 10px 15px 10px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.signin-form-container h2 {
+  text-align: center;
+}
+
+.expense-form-container {
+  max-width: 400px;
+  margin: 10% auto;
+  padding: 10px 15px 30px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.expense-form-container h2 {
+  text-align: center;
+}
