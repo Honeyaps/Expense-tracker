@@ -10,7 +10,7 @@ const userRouter = express.Router();
 
 const validation = zod.object({
   username: zod.string(),
-  phoneno: zod.string().min(10),
+  phoneno: zod.string().min(10).max(10),
   email: zod.string(),
   password: zod.string().min(6),
 });
@@ -122,11 +122,13 @@ userRouter.put("/newpass", async (req, res) => {
   const securePass = await bcrypt.hash(body.password, salt);
 
   const check = await User.findOne({
-    email: body.email
+    email: body.email,
   });
-
-  if (check.password === body.password) {
-    return res.status(403).json({ msg: "try new password" });
+  const passcmpr = await bcrypt.compare(body.password, check.password);
+  if (passcmpr) {
+    return res.status(403).json({
+      msg: "same password again",
+    });
   }
 
   try {

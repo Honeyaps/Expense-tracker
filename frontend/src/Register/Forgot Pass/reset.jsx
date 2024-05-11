@@ -48,7 +48,7 @@ const Reset = () => {
         navigate("/");
       } catch (error) {
         console.error("Error:", error);
-        alert("user not found");
+        alert("Try new password");
       }
     }
   };

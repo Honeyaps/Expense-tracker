@@ -1,43 +1,47 @@
 import React, { useState } from "react";
 import "../Register/sign.css"
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {useRecoilState} from "recoil"
+import { pageState } from "../../state";
 
 axios.defaults.baseURL = "http://localhost:4000";
-
 const Add = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    money: "",
-  });
-  const navigate = useNavigate();
+  const [page,setPage] = useRecoilState(pageState)
+  const [title, setTitle] = useState("");
+  const [tempMoney,settempMoney] = useState(0)
+  const [type,setType] = useState(false)
   const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(type)
 
     let errors = {};
-    if (!formData.title) {
+    if (!title) {
       errors.title = "Title is required";
     }
-    if (!formData.money) {
-      errors.money = "Money is required";
-    } else if (isNaN(formData.money) || parseFloat(formData.money) <= 0) {
-      errors.money = "Money must be a valid positive number";
+    if (!tempMoney) {
+      errors.tempMoney = "tempMoney is required";
+    } else if (isNaN(tempMoney) || parseFloat(tempMoney) <= 0) {
+      errors.tempMoney = "tempMoney must be a valid positive number";
     }
 
     setErrors(errors);
 
     if (Object.keys(errors).length === 0) {
+      let money = tempMoney      
+      if (type === "spend") {
+        money = -tempMoney
+      }
       try {
-        // const response = await axios.post("/expenses/add", formData);
-        navigate("/");
-      } catch (error) {
+        const response = await axios.post("/exp/addexp", {title,money},{
+          headers:{
+            authorization: localStorage.getItem("token")
+          }
+
+        });
+        setPage("home");
+      } catch (error) { 
         console.error("Error:", error);
         alert("Failed to add expense. Please try again.");
       }
@@ -54,20 +58,29 @@ const Add = () => {
           <input
             type="text"
             name="title"
-            value={formData.title}
-            onChange={handleChange}
+            placeholder="Title"
+            value={title}
+            onChange={(e)=>setTitle(e.target.value)}
           />
           {errors.title && <span className="error">{errors.title}</span>}
         </div>
         <div className="form-group">
-          <label>Money</label>
+          <select onChange={(e)=>setType(e.target.value)} >
+          <option >Select</option>
+            <option value="spend">Spend</option>
+            <option value="earn">Earn</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label>tempMoney</label>
           <input
-            type="text"
-            name="money"
-            value={formData.money}
-            onChange={handleChange}
+            type="number"
+            name="tempMoney"
+            placeholder="Expenses in ₹/-"
+            value={tempMoney}
+            onChange={(e)=>settempMoney(e.target.value)}
           />
-          {errors.money && <span className="error">{errors.money}</span>}
+          {errors.tempMoney && <span className="error">{errors.tempMoney}</span>}
         </div>
 
         <button type="submit" className="form_btn">

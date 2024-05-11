@@ -11,6 +11,15 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-const User = mongoose.model("user",userSchema)
+const User = mongoose.model("user", userSchema);
 
-module.exports = {User}
+const expenseSchema = new mongoose.Schema({
+  userId: String,
+  date: Date,
+  title: String,
+  money: Number,
+});
+
+const Expense = mongoose.model("expense", expenseSchema);
+
+module.exports = { User, Expense };

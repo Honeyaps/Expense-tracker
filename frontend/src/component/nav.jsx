@@ -10,7 +10,6 @@ export default function Navbar() {
   const [showMobileLinks, setShowMobileLinks] = useState(false);
 
   const handleLinkClick = () => {
-    // Hide mobile links when a link is clicked
     setShowMobileLinks(false);
   };
 
