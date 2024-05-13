@@ -3,7 +3,6 @@ import Home from "./pages/home";
 import Add from "./pages/Add";
 import Visualize from "./pages/Visualize";
 import { RecoilRoot } from "recoil";
-import Navbar from "./component/nav";
 import Landing from "./modal/Landing";
 import SigninForm from "./Register/signin";
 import SignupForm from "./Register/signup";
@@ -15,15 +14,17 @@ export default function App() {
   return (
     <>
       <RecoilRoot>
-        <Navbar />
+        
         <BrowserRouter>
+        
           <Routes>
-            <Route path="/" element={<Landing />}></Route>
+          
+            <Route path="/landing" element={<Landing />}></Route>
             <Route path="/home" element={<Home />}></Route>
             <Route path="/add" element={<Add />}></Route>
             <Route path="/visualize" element={<Visualize />}></Route>
             <Route path="/signup" element={<SignupForm />}></Route>
-            <Route path="/signin" element={<SigninForm />}></Route>
+            <Route path="/" element={<SigninForm />}></Route>
             <Route path="/email" element={<Email />}></Route>
             <Route path="/otp" element={<Otp />}></Route>
             <Route path="/reset" element={<Reset />}></Route>

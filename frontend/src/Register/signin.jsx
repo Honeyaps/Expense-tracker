@@ -40,7 +40,8 @@ const SigninForm = () => {
       try {
         const response = await axios.post("/user/signin", formData);
         localStorage.setItem("token", response.data.token);
-        navigate("/");
+        localStorage.setItem("name", response.data.name);
+        navigate("/landing");
       } catch (error) {
         alert("user not found");
       }

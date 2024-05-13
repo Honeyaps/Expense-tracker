@@ -77,6 +77,7 @@ userRouter.post("/signin", async (req, res) => {
       const token = jwt.sign(check._id.toHexString(), process.env.SECRET);
 
       return res.json({
+        name: check.username,
         token: token,
       });
     } else {
@@ -103,7 +104,7 @@ userRouter.post("/otp", async (req, res) => {
 
     sendEmail({ email: body.email, OTP: body.OTP })
       .then((response) => {
-        return res.send(check.email).json({ msg: "OTP sent" });
+        return res.send(check.email);
       })
       .catch((response) => {
         return res.send(response.msg);

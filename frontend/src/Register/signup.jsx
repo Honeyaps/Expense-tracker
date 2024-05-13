@@ -56,6 +56,7 @@ const SignupForm = () => {
       try {
         const response = await axios.post("/user/signup", formData);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("name",response.data.name)
         setFormData({
           username: "",
           phone: "",
@@ -63,7 +64,7 @@ const SignupForm = () => {
           password: "",
           confirmPassword: "",
         });
-        navigate("/signin");
+        navigate("/");
       } catch (error) {
         console.error("Error:", error);
         alert("Email id already exists");
@@ -138,7 +139,7 @@ const SignupForm = () => {
         </button>
         <p className="lower_txt">
           Already have an account?{" "}
-          <Link to="/signin" className="signin_link">
+          <Link to="/" className="signin_link">
             Signin
           </Link>
         </p>

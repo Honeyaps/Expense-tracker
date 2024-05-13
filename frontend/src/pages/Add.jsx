@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Register/sign.css"
 import axios from "axios";
-import {useRecoilState} from "recoil"
+import { useRecoilState } from "recoil"
 import { pageState } from "../../state";
+import { useNavigate } from "react-router-dom";
 
 axios.defaults.baseURL = "http://localhost:4000";
 const Add = () => {
-  const [page,setPage] = useRecoilState(pageState)
+  const [page, setPage] = useRecoilState(pageState)
   const [title, setTitle] = useState("");
-  const [tempMoney,settempMoney] = useState(0)
-  const [type,setType] = useState(false)
+  const [tempMoney, settempMoney] = useState(0)
+  const [type, setType] = useState(false)
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  },[]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(type)
 
     let errors = {};
     if (!title) {
@@ -29,19 +35,21 @@ const Add = () => {
     setErrors(errors);
 
     if (Object.keys(errors).length === 0) {
-      let money = tempMoney      
+      let money
       if (type === "spend") {
         money = -tempMoney
+      } else {
+        money = parseInt(tempMoney)
       }
       try {
-        const response = await axios.post("/exp/addexp", {title,money},{
-          headers:{
+        const response = await axios.post("/exp/addexp", { title, money }, {
+          headers: {
             authorization: localStorage.getItem("token")
           }
 
         });
         setPage("home");
-      } catch (error) { 
+      } catch (error) {
         console.error("Error:", error);
         alert("Failed to add expense. Please try again.");
       }
@@ -60,25 +68,24 @@ const Add = () => {
             name="title"
             placeholder="Title"
             value={title}
-            onChange={(e)=>setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
           {errors.title && <span className="error">{errors.title}</span>}
         </div>
         <div className="form-group">
-          <select onChange={(e)=>setType(e.target.value)} >
-          <option >Select</option>
+          <select onChange={(e) => setType(e.target.value)} >
+            <option >Select</option>
             <option value="spend">Spend</option>
             <option value="earn">Earn</option>
           </select>
         </div>
         <div className="form-group">
-          <label>tempMoney</label>
+          <label>Expenses</label>
           <input
             type="number"
             name="tempMoney"
             placeholder="Expenses in ₹/-"
-            value={tempMoney}
-            onChange={(e)=>settempMoney(e.target.value)}
+            onChange={(e) => settempMoney(e.target.value)}
           />
           {errors.tempMoney && <span className="error">{errors.tempMoney}</span>}
         </div>

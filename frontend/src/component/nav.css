@@ -3,7 +3,6 @@
   padding: 0%;
 }
 
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -17,13 +16,13 @@
   display: flex;
 }
 
-
 li {
   list-style: none;
   margin-left: 70px;
   cursor: pointer;
 }
-.logout_btn {
+
+.logout-btn {
   padding: 8px 14px;
   position: absolute;
   right: 40px;
@@ -41,11 +40,15 @@ li {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.avtar {
+.avtar_nav {
   position: absolute;
   right: 150px;
-  border: none;
+  border-radius: 50%;
+  font-weight: 600;
+  padding: 7px 13px;
+  border: solid black 2px;
   font-size: larger;
+  margin-top: -10px;
 }
 
 .mobile_navbar,
@@ -64,15 +67,8 @@ li {
     display: none;
   }
 
-  .logout_btn {
+  .logout-btn {
     display: none;
-  }
-
-  .logout_btn {
-    padding: 5px 8px;
-    right: 40px;
-    top: 15px;
-    transition: 0.2s ease-in-out;
   }
 
   .mobile_navbar {
@@ -88,7 +84,6 @@ li {
 
   .mobile_links li {
     margin: 20px 30px;
-
   }
 
   .menu_btn {
@@ -113,17 +108,7 @@ li {
     transition: 0.2s ease-in-out;
   }
 
-  .logout_btn {
-    padding: 2px 5px;
-    right: 20px;
-    border-radius: 3px;
-    top: 16px;
-    font-size: 10px;
-    transition: 0.2s ease-in-out;
-  }
-
   .menu_btn {
-    
     font-size: 25px;
     margin-top: -6px;
     transition: 0.2s ease-in-out;

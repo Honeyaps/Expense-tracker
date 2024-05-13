@@ -4,12 +4,13 @@ import { pageState } from '../../state'
 import Home from '../pages/home'
 import Add from '../pages/Add'
 import Visualize from '../pages/Visualize'
+import Navbar from '../component/nav'
 
 const Landing = () => {
     const [page] =  useRecoilState(pageState)
-    if(page === "home") return <Home />
-    if(page === "add") return <Add />
-    if(page === "visualize") return <Visualize/>
+    if(page === "home") return (<><Navbar /> <Home /> </>)
+    if(page === "add") return ( <><Navbar /> <Add/> </> )
+    if(page === "visualize") return ( <> <Navbar /> <Visualize/> </>)
   return (
     <Home />
   )
