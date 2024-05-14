@@ -5,6 +5,7 @@ import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { FcMoneyTransfer } from "react-icons/fc";
 
 export default function Navbar() {
   const navigate = useNavigate()
@@ -35,14 +36,14 @@ export default function Navbar() {
       <div className="navbar">
         <div>
           <h1 className="logo">
-            MONEYFY <FaMoneyBillTrendUp />
+            MONEYFY <FcMoneyTransfer className="money_logo"/>
           </h1>
         </div>
         <div>
           <ul className="links">
-            <li onClick={() => { setPage("home"); handleLinkClick(); }}>Home</li>
-            <li onClick={() => { setPage("add"); handleLinkClick(); }}>Add</li>
-            <li onClick={() => { setPage("visualize"); handleLinkClick(); }}>Thrive</li>
+            <li onClick={() => { setPage("home"); handleLinkClick(); }} className="home">Home</li>
+            <li onClick={() => { setPage("add"); handleLinkClick(); }} className="add">Add</li>
+            <li onClick={() => { setPage("visualize"); handleLinkClick(); }} className="thrive">Thrive</li>
           </ul>
         </div>
         <div>

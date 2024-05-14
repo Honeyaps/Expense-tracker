@@ -5,21 +5,43 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  background-color: #e5e5e5;
-  color: rgb(0, 0, 0);
+  justify-content: end;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   height: 20px;
   padding: 20px 10px;
 }
 
+.money_logo {
+  position: absolute;
+  left: 145px;
+  top: 2px;
+}
+
 .links {
   display: flex;
+  position: absolute;
+  right: 240px;
 }
 
 li {
   list-style: none;
   margin-left: 70px;
   cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.thrive:hover {
+  color: orange;
+  transition: 0.1s ease-in-out;
+}
+.home:hover {
+  color: orange;
+  transition: 0.1s ease-in-out;
+}
+.add:hover {
+  color: orange;
+  transition: 0.1s ease-in-out;
 }
 
 .logout-btn {
@@ -32,9 +54,13 @@ li {
   cursor: pointer;
 }
 
+.logout-btn:hover {
+  background-color: rgb(226, 147, 0);
+}
+
 .logo {
   position: absolute;
-  top: 13px;
+  top: 10px;
   left: 30px;
   cursor: pointer;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -49,7 +75,10 @@ li {
   border: solid black 2px;
   font-size: larger;
   margin-top: -10px;
+  cursor: pointer;
 }
+
+.avtar_nav:hover{background-color: lightgray;}
 
 .mobile_navbar,
 .menu_btn {
@@ -63,6 +92,12 @@ li {
     left: 20px;
     transition: 0.2s ease-in-out;
   }
+
+  .money_logo {
+    left: 115px;
+    transition: 0.2s ease-in-out;
+  }
+
   .links {
     display: none;
   }
@@ -84,14 +119,23 @@ li {
 
   .mobile_links li {
     margin: 20px 30px;
+    font-size: 10px;
   }
 
   .menu_btn {
     display: inline;
     border: none;
     font-size: 32px;
+    color: white;
     background-color: transparent;
     margin-top: -6px;
+  }
+
+  .avtar_nav {
+    position: absolute;
+    right: 80px;
+
+    margin-top: -10px;
   }
 }
 
@@ -108,9 +152,24 @@ li {
     transition: 0.2s ease-in-out;
   }
 
+  .money_logo {
+    left: 70px;
+    top: 0px;
+    transition: 0.2s ease-in-out;
+  }
+
   .menu_btn {
     font-size: 25px;
-    margin-top: -6px;
+    margin-top: -9px;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+
+  .avtar_nav {
+    right: 50px;
+    top: 21px;
+    font-size: 12px;
+    padding: 5px 8px;
     transition: 0.2s ease-in-out;
   }
 }

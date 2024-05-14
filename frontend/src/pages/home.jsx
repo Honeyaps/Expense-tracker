@@ -5,7 +5,7 @@ axios.defaults.baseURL = "http://localhost:4000/";
 
 export default function Home() {
   const [user, setUser] = useState([])
-  const [total,setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     async function serverCall() {
@@ -15,29 +15,27 @@ export default function Home() {
         },
 
       });
-      console.log(response.data)
-      // const month = new Date()
-      // console.log(month.getMonth())
+
       setUser(response.data.expense);
     }
-    
+
     serverCall();
   }, []);
-  
-    useEffect(()=>{
-      let temptotal =0
-    user.forEach((item)=>{
+
+  useEffect(() => {
+    let temptotal = 0
+    user.forEach((item) => {
       temptotal += item.money;
     })
     setTotal(temptotal)
-    },[user])
-    
+  }, [user])
+
 
 
   return (
     <>
       <div className="table_contnr">
-        
+
         <table>
           <thead>
 
@@ -53,7 +51,7 @@ export default function Home() {
               <tr key={index}>
                 <td>{item.title}</td>
                 <td>{item.money}</td>
-                <td>{item.date.slice(0,10)}</td>
+                <td>{item.date.slice(0, 10)}</td>
               </tr>
             ))}
           </tbody>
