@@ -6,7 +6,7 @@
 .navbar {
   display: flex;
   justify-content: end;
-  background-color: #000000;
+  background-color: #242424;
   color: rgb(255, 255, 255);
   height: 20px;
   padding: 20px 10px;
@@ -48,10 +48,13 @@ li {
   padding: 8px 14px;
   position: absolute;
   right: 40px;
-  top: 10px;
+  top: 13px;
+  border: none;
   border-radius: 10px;
   background-color: orange;
   cursor: pointer;
+  font-weight: 600;
+  
 }
 
 .logout-btn:hover {

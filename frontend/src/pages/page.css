@@ -1,0 +1,48 @@
+
+
+table {
+  width: 100%;
+}
+
+table th {
+  padding: 10px 0 10px 0;
+  background-color: #e4f8e0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+td {
+  padding-top: 26px;
+  border-bottom: solid black 1px;
+}
+
+.titles {
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+table tbody {
+  text-align: center;
+}
+
+.nodata{text-align: center;
+}
+
+.negative{color: red;
+font-size: 17px;
+font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;}
+
+.positive{color: green;
+  font-size: 17px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;}
+
+  .totalpositive{color: green;
+    font-size: 28px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;}
+
+    .totalnegative{color: red;
+      font-size: 28px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;}

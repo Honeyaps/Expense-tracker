@@ -35,7 +35,7 @@ export default function Navbar() {
     <>
       <div className="navbar">
         <div>
-          <h1 className="logo">
+          <h1 className="logo" onClick={() => { setPage("home"); handleLinkClick(); }}>
             MONEYFY <FcMoneyTransfer className="money_logo"/>
           </h1>
         </div>

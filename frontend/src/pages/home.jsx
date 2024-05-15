@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './page.css'
 import axios from 'axios'
 
 axios.defaults.baseURL = "http://localhost:4000/";
@@ -35,28 +36,44 @@ export default function Home() {
   return (
     <>
       <div className="table_contnr">
+        <br />
 
-        <table>
-          <thead>
+        <h1 >Your Balance: <span className={`total${total < 0 ? 'negative' : 'positive'}`}>₹{total}</span></h1>
+        <br />
 
-            <tr>
-              <th>Title</th>
-              <th>Expense</th>
-              <th>Date</th>
-            </tr>
+        {user && user.length > 0 ? (
+          <table>
+            <thead>
 
-          </thead>
-          <tbody>
-            {user.map((item, index) => (
-              <tr key={index}>
-                <td>{item.title}</td>
-                <td>{item.money}</td>
-                <td>{item.date.slice(0, 10)}</td>
+              <tr>
+                <th>Sr.no</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Expense</th>
+
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <h1>Total: {total}</h1>
+            </thead>
+            <tbody>
+              {user.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}.</td>
+                  <td>{item.date}</td>
+                  <td className="titles">{item.title}</td>
+
+                  <td className={`${item.money < 0 ? 'negative' : 'positive'}`}>
+                    ₹{item.money}
+                  </td>
+
+
+                </tr>
+              ))}
+            </tbody>
+          </table>)
+          :
+          (<h4 className="nodata">No data found</h4>)
+        }
+
+
       </div>
     </>
   );

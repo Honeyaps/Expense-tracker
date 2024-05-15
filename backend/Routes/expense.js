@@ -22,9 +22,9 @@ expenseRouter.post("/addexp", Auth, async (req, res) => {
   try {
     const response = await Expense.create({
       userId: req.userId,
-      date: Date.now(),
+      date: body.date,
       title: body.title,
-      money: body.money,
+      money: body.money
     });
 
     return res.json({

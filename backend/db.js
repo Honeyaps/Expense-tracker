@@ -15,7 +15,7 @@ const User = mongoose.model("user", userSchema);
 
 const expenseSchema = new mongoose.Schema({
   userId: String,
-  date: Date,
+  date: String,
   title: String,
   money: Number,
 });
