@@ -94,7 +94,7 @@ input[type="password"],
 
 .expense-form-container {
   max-width: 400px;
-  margin: 10% auto;
+  margin: 7% auto;
   padding: 10px 15px 30px 25px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -152,11 +152,25 @@ input[type="password"],
 }
 
 /* add form */
-.selectbox{ width: 96%;
+.selectbox {
+  width: 96%;
   height: 35px;
-  border: 1px solid black;
-  padding-left: 8px;}
-  
+  border: none;
+  padding-left: 8px;
+}
+
+.date_box {
+  width: 375px;
+  height: 35px;
+  border-radius: 5px;
+  padding-left: 7px;
+  color: rgb(105, 105, 105);
+  background: linear-gradient(145deg, #ffffff, #f2f2f2);
+  box-shadow: 5px 5px 14px #868686, -5px -5px 14px #ffffff;
+  background-color: #e7e7e7;
+  border: none;
+}
+
 .exp_box {
   width: 94%;
   height: 35px;
@@ -164,6 +178,6 @@ input[type="password"],
   background: linear-gradient(145deg, #ffffff, #f2f2f2);
   box-shadow: 5px 5px 14px #868686, -5px -5px 14px #ffffff;
   background-color: #e7e7e7;
-  border: 1px solid black;
+  border: none;
   padding-left: 8px;
 }

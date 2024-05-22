@@ -138,7 +138,7 @@ const SignupForm = () => {
           Sign Up
         </button>
         <p className="lower_txt">
-          Already have an account?{" "}
+          Already have an account?
           <Link to="/" className="signin_link">
             Signin
           </Link>

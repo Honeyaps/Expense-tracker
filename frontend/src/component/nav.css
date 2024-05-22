@@ -26,20 +26,20 @@
 
 li {
   list-style: none;
+}
+
+.home {
+  list-style: none;
   margin-left: 70px;
   cursor: pointer;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.thrive:hover {
+.links .active {
   color: orange;
-  transition: 0.1s ease-in-out;
 }
+
 .home:hover {
-  color: orange;
-  transition: 0.1s ease-in-out;
-}
-.add:hover {
   color: orange;
   transition: 0.1s ease-in-out;
 }
@@ -54,7 +54,6 @@ li {
   background-color: orange;
   cursor: pointer;
   font-weight: 600;
-  
 }
 
 .logout-btn:hover {
@@ -81,7 +80,9 @@ li {
   cursor: pointer;
 }
 
-.avtar_nav:hover{background-color: lightgray;}
+.avtar_nav:hover {
+  background-color: lightgray;
+}
 
 .mobile_navbar,
 .menu_btn {
@@ -175,4 +176,11 @@ li {
     padding: 5px 8px;
     transition: 0.2s ease-in-out;
   }
+}
+
+/* thrive page */
+
+.donut {
+  margin-top: 30px;
+  height: 400px;
 }

@@ -1,7 +1,6 @@
 import "./nav.css";
 import { useRecoilState } from "recoil";
 import { pageState } from "../../state";
-import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
@@ -41,9 +40,10 @@ export default function Navbar() {
         </div>
         <div>
           <ul className="links">
-            <li onClick={() => { setPage("home"); handleLinkClick(); }} className="home">Home</li>
-            <li onClick={() => { setPage("add"); handleLinkClick(); }} className="add">Add</li>
-            <li onClick={() => { setPage("visualize"); handleLinkClick(); }} className="thrive">Thrive</li>
+            <li onClick={() => { setPage("home"); handleLinkClick(); }} className={`home ${page === "home"?"active":null}`}>Home</li>
+            <li onClick={() => { setPage("add"); handleLinkClick(); }} className={`home ${page === "add"?"active":null}`}>Add</li>
+            <li onClick={() => { setPage("visualize"); handleLinkClick(); }} className={`home ${page === "visualize"?"active":null}`}>Thrive</li>
+            <li onClick={() => { setPage("insights"); handleLinkClick(); }} className={`home ${page === "insights"?"active":null}`}>Insights</li>
           </ul>
         </div>
         <div>
@@ -69,6 +69,7 @@ export default function Navbar() {
             <li onClick={() => { setPage("home"); handleLinkClick(); }}>Home</li>
             <li onClick={() => { setPage("add"); handleLinkClick(); }}>Add</li>
             <li onClick={() => { setPage("visualize"); handleLinkClick(); }}>Thrive</li>
+            <li onClick={() => { setPage("insights"); handleLinkClick(); }}>Insights</li>
             {login ? (
             <li  onClick={logOut}>
               Logout

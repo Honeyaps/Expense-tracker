@@ -14,6 +14,7 @@ const Add = () => {
   const [type, setType] = useState("");
   const [date, setDate] = useState("");
   const [errors, setErrors] = useState({});
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -101,6 +102,7 @@ const Add = () => {
             name="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            className="date_box"
           />
           {errors.date && <span className="error">{errors.date}</span>}
         </div>
