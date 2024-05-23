@@ -54,6 +54,77 @@ table tbody {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+/* --- */
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-range label {
+  font-size: 14px;
+}
+
+.date-range input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.totalpositive {
+  color: green;
+}
+
+.totalnegative {
+  color: red;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.titles {
+  font-weight: bold;
+}
+
+.nodata {
+  text-align: center;
+  color: red;
+}
+
+.to,
+.from{border-radius:10px ;
+margin-right: 10px;}
+
+@media screen and (max-width: 550px) {
+  .to,
+  .from{width: 18px;
+  }
+
+  .home_month{font-size: 20px;}
+
+  .totalpositive{font-size: 20px;}
+
+}
+
+
+
+
 /*  visualize       */
 
 .month {
