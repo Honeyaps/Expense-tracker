@@ -161,5 +161,9 @@ color: rgb(50, 50, 50);}
 .select_table{margin-top: 200px;
 margin-bottom: 50px;}
 
+/* insights */
+
+.graph{max-width: 1600px;
+height: 600px;}
 
 
