@@ -118,6 +118,7 @@ const Add = () => {
           {errors.tempMoney && (
             <span className="error">{errors.tempMoney}</span>
           )}
+          
         </div>
 
         <button type="submit" className="form_btn">

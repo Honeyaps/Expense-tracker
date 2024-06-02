@@ -42,8 +42,10 @@ const Insights = () => {
     }
 
     return (
+        <div className="outer_graph">
         <div className="graph">
             <Linechart  LineChartData={LineChartData}/>
+        </div>
         </div>
     );
 };

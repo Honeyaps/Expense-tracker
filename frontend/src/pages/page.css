@@ -163,7 +163,10 @@ margin-bottom: 50px;}
 
 /* insights */
 
-.graph{max-width: 1600px;
+.graph{width: 80%;
 height: 600px;}
+
+.outer_graph{justify-content: center;
+display: flex;}
 
 
