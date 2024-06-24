@@ -3,7 +3,7 @@ import axios from "axios";
 import "./sign.css";
 import { useNavigate, Link } from "react-router-dom";
 
-axios.defaults.baseURL = "http://localhost:4000/";
+axios.defaults.baseURL = "http://localhost:4050/";
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({

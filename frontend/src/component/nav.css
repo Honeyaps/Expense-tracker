@@ -77,12 +77,10 @@ li {
   border: solid black 2px;
   font-size: larger;
   margin-top: -10px;
-  cursor: pointer;
+  cursor: default;
 }
 
-.avtar_nav:hover {
-  background-color: lightgray;
-}
+
 
 .mobile_navbar,
 .menu_btn {

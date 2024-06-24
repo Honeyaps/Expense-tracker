@@ -3,7 +3,7 @@ const { Expense } = require("../db");
 const Auth = require("../middleware/auth");
 const zod = require("zod");
 
-require("dotenv").config();
+
 const expenseRouter = express.Router();
 const expenseValidator = zod.object({
   title: zod.string(),

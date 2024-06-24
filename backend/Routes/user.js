@@ -5,7 +5,9 @@ const bcrypt = require("bcryptjs");
 const { User } = require("../db");
 const { sendEmail } = require("./nodemailer");
 
+
 require("dotenv").config();
+
 const userRouter = express.Router();
 
 const validation = zod.object({

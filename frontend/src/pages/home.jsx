@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useRecoilState } from "recoil";
 import { datastate } from "../../state";
 
-axios.defaults.baseURL = "http://localhost:4000/";
+axios.defaults.baseURL = "http://localhost:4050/";
 
 export default function Home() {
   const [data, setData] = useRecoilState(datastate);

@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
+
 function sendEmail({ email, OTP }) {
   return new Promise((resolve, reject) => {
     var transporter = nodemailer.createTransport({

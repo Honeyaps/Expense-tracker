@@ -13,6 +13,6 @@ app.use("/user", userRouter);
 // for adding expense
 app.use("/exp", expenseRouter);
 
-app.listen(4000, () => {
+app.listen(4050, () => {
   console.log("Port connected");
 });

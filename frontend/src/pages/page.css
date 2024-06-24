@@ -107,6 +107,8 @@ table tbody {
   color: red;
 }
 
+.home_month{padding-left: 10px;}
+
 .to,
 .from{border-radius:10px ;
 margin-right: 10px;}

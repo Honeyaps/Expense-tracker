@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { pageState } from "../../state";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "http://localhost:4050";
 
 const Add = () => {
   const [page, setPage] = useRecoilState(pageState);
